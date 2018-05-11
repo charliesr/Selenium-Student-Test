@@ -41,14 +41,17 @@ namespace Students.Backend.Selenium
             var splittedDisplayer = displayedResult.Split("{");
 
             Assert.IsTrue(splittedDisplayer.Length > 2);
-
-
-
         }
 
         [TestMethod]
         public void SeleniumAddTest()
         {
+            var baseUrl = "http://localhost:5000/api/Student";
+
+            chrome.Navigate().GoToUrl(baseUrl);
+            var responseElement = chrome.FindElement(By.TagName("pre"));
+            var displayedResult = responseElement.Text;
+
 
         }
 
